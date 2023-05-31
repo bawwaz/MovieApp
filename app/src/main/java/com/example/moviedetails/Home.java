@@ -13,19 +13,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
-import com.example.moviedetails.DetailMoviePage;
-import com.example.moviedetails.Login;
-import com.example.moviedetails.ModelMovie;
-import com.example.moviedetails.MovieAdapter;
 import com.example.moviedetails.MovieAdapter.ContactsAdapterListener;
-import com.example.moviedetails.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,6 +34,7 @@ public class Home extends AppCompatActivity implements ContactsAdapterListener{
     private MovieAdapter listAdapterMovie;
 
     public void getApiMovie(){
+        setContentView(R.layout.activity_home_page);
 
         String url = "https://api.themoviedb.org/3/movie/popular?api_key=c41889d54fbc24645c28dd9ce811d0ba&language=en-US&page=1";
         AndroidNetworking.get(url)
@@ -49,7 +44,6 @@ public class Home extends AppCompatActivity implements ContactsAdapterListener{
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
-//                        Log.d("sukses", "onResponse: " + jsonObject.toString());
                         try {
                             JSONArray jsonArrayMovie = jsonObject.getJSONArray("results");
                             for (int i = 0; i < jsonArrayMovie.length(); i++) {
@@ -60,6 +54,7 @@ public class Home extends AppCompatActivity implements ContactsAdapterListener{
                                 myMovie.setPoster_path(jsonMovie.getString("poster_path"));
                                 myMovie.setBackdrop_path(jsonMovie.getString("backdrop_path"));
                                 listDataMovie.add(myMovie);
+
                             }
                             recyclerView = findViewById(R.id.rvMovie);
                             listAdapterMovie = new MovieAdapter(getApplicationContext(), listDataMovie, Home.this);
@@ -104,8 +99,8 @@ public class Home extends AppCompatActivity implements ContactsAdapterListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_home_page);
+        getApiMovie();
         listDataMovie = new ArrayList<>();
 
     }
