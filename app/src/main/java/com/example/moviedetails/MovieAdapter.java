@@ -1,3 +1,5 @@
+//class that handles all user interaction
+
 package com.example.moviedetails;
 
 
@@ -42,28 +44,33 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
             imgMovie = view.findViewById(R.id.imgMovie);
             layoutMovie = view.findViewById(R.id.layoutMovie);
 
+//detail click event
             layoutMovie.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     listener.onContactSelected(listMovie.get(getAdapterPosition()));
                 }
             });
+
+            //remove data on long click
             layoutMovie.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
-                    if (listener != null){
-                        int pos = getAdapterPosition();
+                    if (listener != null) {
+                        int position = getAdapterPosition();
 
-                        if (pos != RecyclerView.NO_POSITION){
-                            listener.onItemLongClick(pos);
+                        if (position != RecyclerView.NO_POSITION) {
+                            listener.onItemLongClick(position);
                         }
                     }
                     return true;
                 }
             });
-        }
+            }
     }
 
+
+    //layout the data from api
     @NonNull
     @Override
     public MovieAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -73,6 +80,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
         return new MyViewHolder(itemView);
     }
 
+
+
+
+    //image
     @Override
     public void onBindViewHolder(@NonNull MovieAdapter.MyViewHolder holder, int position) {
         final ModelMovie modelMovie = this.listMovie.get(position);
@@ -81,6 +92,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
         String posterUrl = "https://image.tmdb.org/t/p/w500" + modelMovie.getPoster_path();
         Glide.with(holder.itemView.getContext()).load(posterUrl).into(holder.imgMovie);
     }
+
+
 
     @Override
     public int getItemCount() {

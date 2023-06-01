@@ -113,21 +113,23 @@ public class Home extends AppCompatActivity implements ContactsAdapterListener{
         startActivity(intent);
     }
 
+
     @Override
     public void onItemLongClick(int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(Home.this);
-        builder.setTitle("Perhatian!")
-                .setMessage("Apakah kamu yakin ingin menghapus item ini?")
-                .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+        builder.setTitle("Warning")
+                .setMessage("Selected item will be deleted CONTINUE?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // Tindakan yang dilakukan ketika tombol OK diklik
+
+                        // yes output
                         listDataMovie.remove(position);
-                        Toast.makeText(Home.this.getApplicationContext(), "Deleted", Toast.LENGTH_LONG).show();
+                        listAdapterMovie.notifyDataSetChanged(); // Update Adapter
                     }
                 })
-                .setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // Tindakan yang dilakukan ketika tombol Batal diklik
+                        // Cancel output
                         dialog.cancel();
                     }
                 });
