@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.MovieDetails" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/maroon</item>
+        <item name="colorPrimary">@color/dark</item>
         <item name="colorPrimaryVariant">@color/dark</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
