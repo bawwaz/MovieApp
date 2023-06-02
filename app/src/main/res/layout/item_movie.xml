@@ -15,7 +15,8 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="15dp"
         app:cardCornerRadius="20dp"
-        app:cardElevation="5dp">
+        app:cardElevation="5dp"
+        app:cardBackgroundColor="@color/gpt">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -35,7 +36,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_toRightOf="@id/imgMovie"
                 android:text="Judul Film"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <TextView
@@ -48,7 +49,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:maxLines="4"
-                android:text="Description"/>
+                android:text="Description"
+                android:textColor="@color/white"/>
 
         </RelativeLayout>
 
