@@ -13,12 +13,19 @@ public class ModelMovie implements Parcelable {
     private String poster_path;
     private String backdrop_path;
 
+    private String original_language;
+
+
+
+
     protected ModelMovie(Parcel in) {
         original_title = in.readString();
         overview = in.readString();
         release_date = in.readString();
         poster_path = in.readString();
         backdrop_path = in.readString();
+        popularity = in.readString();
+        original_language = in.readString();
     }
 
     public ModelMovie(){}
@@ -34,6 +41,24 @@ public class ModelMovie implements Parcelable {
             return new ModelMovie[size];
         }
     };
+
+    private String popularity;
+
+
+    public String getPopularity() {
+        return popularity;
+    }
+
+    public void setPopularity(String popularity) {
+        this.popularity = popularity;
+    }
+
+    public String getOriginal_language() { return original_language; }
+
+    public void setOriginal_language(String original_language) {this.original_language = original_language;}
+
+
+
 
     public String getOriginal_title() {
         return original_title;
@@ -87,5 +112,7 @@ public class ModelMovie implements Parcelable {
         dest.writeString(release_date);
         dest.writeString(poster_path);
         dest.writeString(backdrop_path);
+        dest.writeString(popularity);
+        dest.writeString(original_language);
     }
 }

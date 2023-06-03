@@ -49,10 +49,12 @@ public class Home extends AppCompatActivity implements ContactsAdapterListener{
                             for (int i = 0; i < jsonArrayMovie.length(); i++) {
                                 ModelMovie myMovie = new ModelMovie();
                                 JSONObject jsonMovie = jsonArrayMovie.getJSONObject(i);
+                                myMovie.setPopularity(jsonMovie.getString("popularity"));
                                 myMovie.setOriginal_title(jsonMovie.getString("original_title"));
                                 myMovie.setOverview(jsonMovie.getString("overview"));
                                 myMovie.setPoster_path(jsonMovie.getString("poster_path"));
                                 myMovie.setBackdrop_path(jsonMovie.getString("backdrop_path"));
+                                myMovie.setOriginal_language(jsonMovie.getString("original_language"));
                                 listDataMovie.add(myMovie);
 
                             }

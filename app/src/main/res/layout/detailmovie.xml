@@ -66,6 +66,61 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
+        <TextView
+            android:id="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetailDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popularity"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvPopularity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="popularity"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginStart="30dp"
+            android:paddingEnd="40dp"
+            android:paddingStart="15dp"
+            android:maxLines="7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvPopularity"
+            android:text="Original Language"
+            android:textColor="@color/white"
+            android:paddingStart="15dp"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tvoriginal_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Original language"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:layout_editor_absoluteX="153dp"
+            android:paddingTop="20dp"
+            tools:ignore="MissingConstraints" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
