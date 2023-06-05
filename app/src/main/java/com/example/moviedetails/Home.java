@@ -54,7 +54,9 @@ public class Home extends AppCompatActivity implements ContactsAdapterListener{
                                 myMovie.setOverview(jsonMovie.getString("overview"));
                                 myMovie.setPoster_path(jsonMovie.getString("poster_path"));
                                 myMovie.setBackdrop_path(jsonMovie.getString("backdrop_path"));
-                                myMovie.setOriginal_language(jsonMovie.getString("original_language"));
+                                myMovie.setAdult(jsonMovie.getString("adult"));
+                                myMovie.setVote_average(jsonMovie.getString("vote_average"));
+                                myMovie.setVote_count(jsonMovie.getString("vote_count"));
                                 listDataMovie.add(myMovie);
 
                             }

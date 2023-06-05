@@ -18,7 +18,11 @@ public class DetailMoviePage extends AppCompatActivity {
 
     private TextView tvPopularity;
 
-    private TextView tvOriginallanguage;
+    private TextView tvAdult;
+
+    private TextView tvVote_count;
+
+    private TextView tvVote_average;
 
 
     @SuppressLint("MissingInflatedId")
@@ -31,7 +35,9 @@ public class DetailMoviePage extends AppCompatActivity {
         tvDetailDescription = findViewById(R.id.tvDetailDescription);
         imgDetailMovie = findViewById(R.id.imgDetailMovie);
         tvPopularity = findViewById(R.id.tvPopularity);
-        tvOriginallanguage = findViewById(R.id.tvoriginal_language);
+        tvAdult = findViewById(R.id.tvAdult);
+        tvVote_average = findViewById(R.id.tvVote_avarage);
+        tvVote_count = findViewById(R.id.tvVote_count);
 
         Intent intent = getIntent();
         if (intent.hasExtra("myteam")){
@@ -39,7 +45,9 @@ public class DetailMoviePage extends AppCompatActivity {
             tvDetailTitle.setText(modelMovie.getOriginal_title());
             tvDetailDescription.setText(modelMovie.getOverview());
             tvPopularity.setText(modelMovie.getPopularity());
-            tvOriginallanguage.setText(modelMovie.getOriginal_language());
+            tvAdult.setText(modelMovie.getAdult());
+            tvVote_count.setText(modelMovie.getVote_count());
+            tvVote_average.setText((modelMovie.getVote_average()));
             String backdropUrl = "https://image.tmdb.org/t/p/w500" + modelMovie.getBackdrop_path();
             Glide.with(DetailMoviePage.this).load(backdropUrl).into(imgDetailMovie);
         }

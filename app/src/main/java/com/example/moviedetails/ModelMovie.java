@@ -12,8 +12,12 @@ public class ModelMovie implements Parcelable {
     private String release_date;
     private String poster_path;
     private String backdrop_path;
+    private String adult;
 
-    private String original_language;
+    private String vote_average;
+
+    private String vote_count;
+
 
 
 
@@ -25,7 +29,9 @@ public class ModelMovie implements Parcelable {
         poster_path = in.readString();
         backdrop_path = in.readString();
         popularity = in.readString();
-        original_language = in.readString();
+        adult = in.readString();
+        vote_average = in.readString();
+        vote_count = in.readString();
     }
 
     public ModelMovie(){}
@@ -42,6 +48,24 @@ public class ModelMovie implements Parcelable {
         }
     };
 
+    public String getVote_count() {return vote_count; }
+    public void  setVote_count(String vote_count) {
+        this.vote_count = vote_count;
+    }
+
+    public String getVote_average() {return vote_average; }
+    public void setVote_average(String vote_average) {
+        this.vote_average = vote_average;
+    }
+
+
+
+    public String getAdult(){ return adult; }
+
+    public void setAdult(String adult) {
+        this.adult = adult;
+    }
+
     private String popularity;
 
 
@@ -53,9 +77,7 @@ public class ModelMovie implements Parcelable {
         this.popularity = popularity;
     }
 
-    public String getOriginal_language() { return original_language; }
 
-    public void setOriginal_language(String original_language) {this.original_language = original_language;}
 
 
 
@@ -113,6 +135,8 @@ public class ModelMovie implements Parcelable {
         dest.writeString(poster_path);
         dest.writeString(backdrop_path);
         dest.writeString(popularity);
-        dest.writeString(original_language);
+        dest.writeString(adult);
+        dest.writeString(vote_average);
+        dest.writeString(vote_count);
     }
 }

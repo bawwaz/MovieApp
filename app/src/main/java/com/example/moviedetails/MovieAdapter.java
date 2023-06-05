@@ -52,6 +52,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
                 }
             });
 
+
             //remove data on long click
             layoutMovie.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
