@@ -71,12 +71,25 @@
             app:layout_constraintTop_toBottomOf="@+id/tvDetailDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Popularity"
+            android:text="Views"
             android:textSize="18sp"
             android:textColor="@color/white"
             android:layout_marginStart="30dp"
             android:layout_marginTop="30dp"
             app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For adults?"
+            android:textSize="18sp"
+            android:paddingStart="16dp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/textView3"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/tvPopularity"
@@ -95,32 +108,84 @@
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tvAdult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tvPopularity"
-            android:text="Original Language"
+            android:text="Adult false or yes"
             android:textColor="@color/white"
-            android:paddingStart="15dp"
             android:textSize="18sp"
-            android:layout_marginTop="20dp"
-            tools:ignore="MissingConstraints" />
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="30dp"
+            android:paddingEnd="40dp"
+            android:paddingStart="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPopularity"
+            />
 
         <TextView
-            android:id="@+id/tvoriginal_language"
+            android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Original language"
+            android:text="Total Vote"
+            android:textSize="18sp"
+            android:paddingStart="16dp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/textView5"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            tools:ignore="MissingConstraints"/>
+
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vote average"
+            android:textSize="18sp"
+            android:paddingStart="16dp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/textView4"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            tools:ignore="MissingConstraints"/>
+
+        <TextView
+            android:id="@+id/tvVote_avarage"
+            android:text="Vote,avg"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="30dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvAdult"/>
+
+        <TextView
+            android:id="@+id/tvVote_count"
+            android:text="vote,count"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            tools:layout_editor_absoluteX="153dp"
-            android:paddingTop="20dp"
-            tools:ignore="MissingConstraints" />
+            android:paddingEnd="40dp"
+            android:layout_marginTop="40dp"
+            android:paddingStart="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvVote_avarage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
